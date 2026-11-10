@@ -15,7 +15,7 @@ Quali caratteristiche delle descrizioni promozionali dei libri sono associate al
 
 ## Metodo
 Come LLM ho deciso di utilizzare Claude (se escludiamo un primo tentativo fatto con ChatGPT, di cui avrò modo di sintetizzare gli esiti in sede d'esame). Per operazioni più "complesse" (nella mia esperienza intendo per esempio la creazione di file Excel con alcune specifiche funzionalità di calcolo) ho avuto una migliore esperienza con Claude rispetto ad altri competitor; ho ritenuto quindi più adatto utilizzarlo anche per un'attività che non avevo mai tentato prima come la programmazione.
-Ho seguito con attenzione la dispensa-tutorial pubblicata su Ariel, cercando di applicare i suggerimenti di scrittura di script in essa contenuti. 
+Ho seguito con attenzione la dispensa-tutorial pubblicata su Ariel, cercando di applicare i suggerimenti di scrittura di prompt in essa contenuti. 
 Per l'ambiente di lavoro ho usato: Python come interprete del linguaggio e Visaul Studio Code come editor del codice. 
 
 
