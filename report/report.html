@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Misurare il gusto – Report di sintesi</title>
+<style>
+
+body { font-family: Arial, Helvetica, sans-serif; max-width: 800px; margin: 2rem auto;
+       padding: 0 1rem; line-height: 1.6; color: #222; }
+h1 { margin-bottom: 0.2rem; }
+h2 { margin-top: 2.5rem; border-bottom: 1px solid #ccc; padding-bottom: 0.3rem; }
+.sottotitolo { color: #555; margin-top: 0; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.9rem; }
+th, td { border: 1px solid #bbb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+th { background: #f0f0f0; }
+td.num { text-align: right; white-space: nowrap; }
+img { width: 100%; height: auto; }
+figure { margin: 1.5rem 0; }
+figcaption { font-size: 0.9rem; color: #555; margin-top: 0.4rem; }
+.nota { font-size: 0.85rem; color: #555; }
+
+</style>
+</head>
+<body>
+
+<h1>Misurare il gusto</h1>
+<p class="sottotitolo">Il linguaggio delle descrizioni e la classifica dei libri più venduti di IBS</p>
+<p>Questo report riassume il progetto «Misurare il gusto». Partendo dalla classifica dei libri più venduti di IBS, misura quanto le descrizioni promozionali usano cinque tipi di linguaggio (premi, novità, coinvolgimento del lettore, giudizi positivi, citazioni di giornalisti) e lo mette in relazione con la posizione in classifica, con i premi degli autori e con le case editrici. L'analisi riguarda 100 libri in un'unica rilevazione: i risultati descrivono associazioni, non rapporti di causa ed effetto.</p>
+
+<h2>Numeri</h2>
+<h3>Quadro generale</h3>
+<table>
+<tr><th colspan="2">Classifica IBS</th></tr>
+<tr><td>Libri nel CSV</td><td class="num">100</td></tr>
+<tr><td>Libri analizzati (con descrizione)</td><td class="num">100</td></tr>
+<tr><td>Posizioni in classifica</td><td class="num">da 1 a 100</td></tr>
+<tr><td>Parole totali nelle descrizioni</td><td class="num">25.933</td></tr>
+<tr><td>Autori diversi</td><td class="num">108</td></tr>
+<tr><td>Case editrici diverse</td><td class="num">44 (con almeno 3 libri: 10)</td></tr>
+<tr><th colspan="2">Premi</th></tr>
+<tr><td>Libri con premi citati nella descrizione</td><td class="num">21 (21%)</td></tr>
+<tr><td>Libri con autore molto premiato (almeno 5 premi diversi)</td><td class="num">24 (24%)</td></tr>
+<tr><td>Correlazione tra premi dell'autore e posizione (Spearman)</td><td class="num">rho = +0,06; p = 0,552</td></tr>
+</table>
+<h3>Vocabolari</h3>
+<table>
+<tr><th>Vocabolario</th><th>Occorrenze</th><th>Ogni 100 parole</th><th>rho</th><th>p</th><th>Editore che lo usa di più (almeno 3 libri)</th></tr>
+<tr><td>Premi</td><td class="num">46</td><td class="num">0,18</td><td class="num">-0,05</td><td class="num">0,602</td><td>Einaudi (n=14): 0,38 ogni 100 parole</td></tr>
+<tr><td>Novità</td><td class="num">60</td><td class="num">0,23</td><td class="num">+0,07</td><td class="num">0,509</td><td>Einaudi (n=14): 0,42 ogni 100 parole</td></tr>
+<tr><td>Coinvolgimento del lettore</td><td class="num">9</td><td class="num">0,03</td><td class="num">-0,12</td><td class="num">0,241</td><td>Marsilio (n=5): 0,07 ogni 100 parole</td></tr>
+<tr><td>Valutativi positivi</td><td class="num">81</td><td class="num">0,31</td><td class="num">-0,03</td><td class="num">0,790</td><td>Bompiani (n=5): 0,41 ogni 100 parole</td></tr>
+<tr><td>Citazioni e critiche di giornalisti</td><td class="num">36</td><td class="num">0,14</td><td class="num">+0,02</td><td class="num">0,828</td><td>Neri Pozza (n=4): 0,33 ogni 100 parole</td></tr>
+</table>
+<p class="nota">rho è la correlazione di Spearman tra l'uso del vocabolario e la posizione in classifica: positivo = più linguaggio di quel tipo nelle posizioni alte (vicine al primo posto), negativo = nelle posizioni basse. Se p è inferiore a 0,05 la correlazione si considera significativa. Le occorrenze sono sommate su tutte le descrizioni.</p>
+
+<h2>Grafici</h2>
+<figure>
+<img src="correlazioni.png" alt="correlazioni.png">
+<figcaption>Correlazione di Spearman tra l'uso di ciascun vocabolario e la posizione in classifica. Valori positivi: più linguaggio di quel tipo nelle posizioni alte. L'asterisco indica le correlazioni significative (p &lt; 0,05).</figcaption>
+</figure>
+<figure>
+<img src="distribuzione_premi.png" alt="distribuzione_premi.png">
+<figcaption>Per ogni fascia di posizioni, quota di libri che citano premi nella descrizione, che hanno un autore molto premiato o che hanno almeno una delle due caratteristiche.</figcaption>
+</figure>
+<figure>
+<img src="occorrenze.png" alt="occorrenze.png">
+<figcaption>Occorrenze ogni 100 parole di ciascun vocabolario nelle descrizioni dell'intera classifica.</figcaption>
+</figure>
+
+<h2>Editori</h2>
+<p>Nel campione compaiono 44 case editrici; 10 hanno almeno 3 libri e sono nella mappa. La mappa mostra, per ciascuna, quanto usa ogni vocabolario rispetto alla media di tutti i libri. Con pochi libri per editore le differenze possono essere dovute al caso.</p>
+<p><a href="editori_vocabolari.html">Apri la tabella interattiva editori e vocabolari</a>
+(si apre nel browser; il file deve stare nella stessa cartella di questo report).</p>
+
+<p class="nota">Report generato il 09/11/2026.</p>
+
+</body>
+</html>
